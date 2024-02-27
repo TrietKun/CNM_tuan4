@@ -24,13 +24,14 @@
                     <input type="text" class="form-control" id="inputName" name="name" placeholder="Nhập tên môn">
                 </div>
             </div>
-            <input type="file" name="image">
+            <input type="file" name="img">
+            <br>
+            <br>
             <button type="submit" class="btn btn-primary">Thêm</button>
         </form>
-
         <form action="/delete" method="post" class="mb-3" enctype="multipart/form-data">
-            <table class="table">
-                <caption>Danh sách Môn</caption>
+            <table class="table table-bordered text-center align-middle">
+                <caption style="caption-side: top;">Danh sách Môn</caption>
                 <thead>
                     <tr>
                         <th scope="col">STT</th>
@@ -43,6 +44,8 @@
                         <tr>
                             <td><%= item.id %></td>
                             <td><%= item.name %></td>
+                            <td> <img style="width: 100px;height: auto;" src="<%= item.img %>"/> </td>
+                            <!-- <td> <img style="width: 100px;height: auto;" src="/img/1.png"/> </td> -->
                             <td><input type="checkbox" name="sel" value="<%= index %>"></td>
                         </tr>
                     <% }) %>
